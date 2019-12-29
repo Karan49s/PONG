@@ -1,0 +1,10 @@
+﻿  main.cpp
+C:\Users\hp\Desktop\sfml_01\sfml_01\main.cpp(44,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\hp\Desktop\sfml_01\sfml_01\main.cpp(45,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+C:\Users\hp\Desktop\sfml_01\sfml_01\main.cpp(104,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\hp\Desktop\sfml_01\sfml_01\main.cpp(116,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 124 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  sfml_01.vcxproj -> C:\Users\hp\Desktop\sfml_01\Release\Pong.exe

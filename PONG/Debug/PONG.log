@@ -1,0 +1,6 @@
+﻿  PONG.cpp
+D:\Game Development\PONG\PONG\PONG.cpp(44,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Game Development\PONG\PONG\PONG.cpp(45,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Game Development\PONG\PONG\PONG.cpp(104,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Game Development\PONG\PONG\PONG.cpp(116,19): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  PONG.vcxproj -> D:\Game Development\PONG\Debug\PONG.exe
