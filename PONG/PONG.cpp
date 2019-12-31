@@ -2,6 +2,7 @@
 #include <SFML\Audio.hpp>
 #include <iostream>
 #include <sstream>
+
 using namespace sf;
 using namespace std;
 
@@ -21,11 +22,15 @@ int main()
 	score.setPosition(380, 10);
 	score.setString("0 : 0");
 
-	/*
+
 	//Images
 	Texture player_tex;
-	if(!player_tex.loadFromFile("Textures/player_tex.png"))  return -1;
-	*/
+	if(!player_tex.loadFromFile("Textures/playerTile.png"))  return -1;
+	Texture ball_tex;
+	if (!ball_tex.loadFromFile("Textures/ball.png"))  return -1;
+	Texture background_tex;
+	if (!background_tex.loadFromFile("Textures/back.png"))  return -1;
+
 	//Sounds
 	/*
 	SoundBuffer buff_hit;
@@ -41,7 +46,7 @@ int main()
 	//VARIABLES
 	int yVelPlayer = 0;
 	int yVelOpp = 0;
-	float xball = -3.3;
+	float xball = -5;
 	float yball = -3.3;
 	int playerscore = 0, oppscore = 0;
 
@@ -50,25 +55,25 @@ int main()
 	background.setSize(Vector2f(800, 600));
 	background.setPosition(0, 0);
 	background.setFillColor(Color(150, 150, 150, 255));
-	//background.setTexture(&player_tex);
+	background.setTexture(&background_tex);
 
 	RectangleShape player1;
 	player1.setSize(Vector2f(20, 100));
 	player1.setPosition(30, 200);
 	player1.setFillColor(Color(200, 40, 40, 255));
-	//player1.setTexture(&player1);
+	player1.setTexture(&player_tex);
 
 	RectangleShape player2;
 	player2.setSize(Vector2f(20, 100));
 	player2.setPosition(750, 400);
 	player2.setFillColor(Color(200, 40, 40, 255));
-	//player2.setTexture(&player);
+	player2.setTexture(&player_tex);
 
 	RectangleShape ball;
 	ball.setSize(Vector2f(20, 20));
 	ball.setPosition(400, 300);
 	ball.setFillColor(Color(40, 255, 40, 255));
-	//ball.setTexture(&player);
+	ball.setTexture(&ball_tex);
 
 
 
@@ -97,7 +102,9 @@ int main()
 			}
 
 		}
-		//Logic
+		///////////////////////////////
+		///////////////Logic///////////
+		///////////////////////////////
 		yVelPlayer = (downButton - upButton) * 5;
 
 		//MOVE
@@ -111,8 +118,8 @@ int main()
 			player1.setPosition(30, 500);
 
 		//player2AI
-		if (ball.getPosition().y < player2.getPosition().y) yVelOpp = -3;
-		if (ball.getPosition().y + 20 > player2.getPosition().y + 100) yVelOpp = 3;
+		if (ball.getPosition().y < player2.getPosition().y) yVelOpp = -3.8;
+		if (ball.getPosition().y + 20 > player2.getPosition().y + 100) yVelOpp = 3.8;
 		player2.move(0, yVelOpp);
 
 		//outofbound ball and reflect
@@ -141,9 +148,12 @@ int main()
 			xball = -xball;
 			//hit.play(); //sound
 		}
-		//RENDERING
-		window.clear();
 
+
+		///////////////////////////
+		//////////RENDERING////////
+		///////////////////////////
+		window.clear();
 
 
 		//drawing the shapes
